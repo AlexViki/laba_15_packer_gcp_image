@@ -1,0 +1,22 @@
+{
+    "builders": [
+        {
+            "type": "googlecompute",
+            "project_id": "learn-286016",
+            "image_name": "packer-ubuntu-1804-{{timestamp}}",
+            "image_family": "web-ubuntu-18",
+            "source_image_family": "ubuntu-1804-lts",
+            "zone": "europe-west3-c",
+            "ssh_username": "appuser",
+            "machine_type": "f1-micro",
+            "tags": "packer"
+        }
+    ],
+    "provisioners": [
+        {
+            "type": "shell",
+            "script": "config-scripts/install_nginx.sh",
+            "execute_command": "sudo {{.Path}}"
+        }
+    ]
+}

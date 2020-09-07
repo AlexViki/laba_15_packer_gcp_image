@@ -7,9 +7,13 @@
             "image_family": "web-ubuntu-18",
             "source_image_family": "ubuntu-1804-lts",
             "zone": "europe-west3-c",
-            "ssh_username": "appuser",
             "machine_type": "f1-micro",
-            "tags": "packer"
+            "tags": "packer",
+            
+            "ssh_username": "appuser",
+            "communicator": "ssh",
+            "ssh_keypair_name": "gcp_learn",
+            "ssh_private_key_file": "/key/gcp_learn"
         }
     ],
     "provisioners": [
